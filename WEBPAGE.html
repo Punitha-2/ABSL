@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Form</title>
+    <script>
+        function displayInfo(event) {
+            event.preventDefault(); // Prevent the page from reloading
+            const name = document.getElementById("name").value;
+            const motherName = document.getElementById("motherName").value;
+            const fatherName = document.getElementById("fatherName").value;
+            const address = document.getElementById("address").value;
+            const hobbies = document.getElementById("hobbies").value;
+
+            // Display the collected information
+            const output = `
+                <h2>Personal Information Submitted:</h2>
+                <p><strong>Your Name:</strong> ${name}</p>
+                <p><strong>Mother's Name:</strong> ${motherName}</p>
+                <p><strong>Father's Name:</strong> ${fatherName}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Hobbies:</strong> ${hobbies}</p>
+            `;
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>Personal Information</h1>
+    <form onsubmit="displayInfo(event)">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="punitha.R" required><br><br>
+
+        <label for="motherName">Mother's Name:</label><br>
+        <input type="text" id="motherName" name=" poongodi"required><br><br>
+
+        <label for="fatherName">Father's Name:</label><br>
+        <input type="text" id="fatherName" name="Ramadoss" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="melmampattu, mettu street 27, villupuram dt 604 204" row="4" cols="50" required></textarea><br><br>
+
+        <label for="hobbies">Hobbies:</label><br>
+        <textarea id="hobbies" name="drawing,dancing,coding,acting" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="output" style="margin-top:20px;"></div>
+</body>
+</html>
